@@ -1,0 +1,6 @@
+{
+  "name": "My Account Safe",
+  "description": "Google Sheet 기반의 안전한 개인 계정 관리 도구",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

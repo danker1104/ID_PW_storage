@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer components {
+  .account-card {
+    @apply bg-white rounded-xl p-5 border border-slate-200 transition-all duration-200 ease-in-out;
+  }
+  .account-card:hover {
+    @apply border-blue-500 shadow-[0_4px_12px_rgba(0,0,0,0.05)];
+  }
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-sm;
+  }
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 antialiased;
+}
