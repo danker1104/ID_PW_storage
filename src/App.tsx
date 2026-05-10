@@ -15,8 +15,10 @@ import { api } from './services/api';
 import { Account, GASRequest } from './types';
 import { AccountCard } from './components/AccountCard';
 import { AccountForm } from './components/AccountForm';
+import { VerificationScreen } from './components/VerificationScreen';
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -105,6 +107,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <AnimatePresence>
+        {!isAuthenticated && (
+          <VerificationScreen onVerify={() => setIsAuthenticated(true)} />
+        )}
+      </AnimatePresence>
+
       {/* Navbar with dark background */}
       <nav className="flex items-center justify-between px-8 py-4 bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50">
         <div className="flex items-center gap-3">
